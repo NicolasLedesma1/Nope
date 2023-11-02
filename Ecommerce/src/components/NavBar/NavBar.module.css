@@ -1,0 +1,33 @@
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    max-width: 50%;
+    border-radius: 20px;
+    position: relative;
+    left: 25%;
+}
+.contenedor .marca {
+    margin: 5px;
+    width: 200px;
+}
+
+.contenedor ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    box-shadow: inset;
+    padding-right: 40px;
+
+}
+.contenedor li{
+    padding: 2px;
+    margin: 5px;
+    font-size: xx-large;
+    border: inset 3px crimson;
+    border-radius: 10%;
+
+}
+
