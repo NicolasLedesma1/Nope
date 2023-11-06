@@ -11,7 +11,7 @@
 }
 .contenedor .marca {
     margin: 5px;
-    width: 200px;
+    width: 100px;
 }
 
 .contenedor ul{
@@ -23,9 +23,9 @@
 
 }
 .contenedor li{
-    padding: 2px;
+    padding: 0px;
     margin: 5px;
-    font-size: xx-large;
+    font-size: x-large;
     border: inset 3px crimson;
     border-radius: 10%;
 

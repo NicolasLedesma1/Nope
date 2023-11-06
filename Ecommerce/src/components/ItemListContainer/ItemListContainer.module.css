@@ -1,0 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+div{
+    color: #f5d33d;
+    font-family: 'Pokemon Solid', sans-serif;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
