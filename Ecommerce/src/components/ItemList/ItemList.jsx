@@ -1,24 +1,32 @@
 import { useEffect, useState } from "react";
-import './Tarjeta.module.css';
+import {pokemonContainer} from "./ItemList.module.css";
+import {pokemonCard} from "./ItemList.module.css";
+import {pokemonImagen} from "./ItemList.module.css";
+import {pokemonTitulo} from "./ItemList.module.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 function Pokemon({id , nombre , imagen}) {
   return (
-    <div className="pokemon-card" key={id}>
-      <img src={imagen} alt={nombre} className="pokemon-imagen"/>
-      <p className='pokemon-titulo'>
+    <div className={pokemonCard}>
+      <img src={imagen} alt={nombre} className={pokemonImagen}/>
+      <p className={pokemonTitulo}>
         <span>#{id}</span>
         <span>{nombre}</span>
       </p>
+      <ItemCount  inicial={1} stock={10} onAdd={(cantidad) => console.log( 'cantidad agregada ', cantidad) } />
+      <button> ver detalle </button>
     </div>
   );
 }
+
+
 function PokemonApi() {
   const [pokemones, setPokemones] = useState([]);
 
   useEffect(() => {
     const getPokemon = async () => {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
+        "https://pokeapi.co/api/v2/pokemon?limit=60&offset=0"
       );
       const listaPokemones = await response.json();
       const { results } = listaPokemones;
@@ -38,11 +46,12 @@ function PokemonApi() {
     getPokemon();
   }, []);
   return (
-    <section className="pokemon-container">
-      <h2>elegir</h2>
-      {pokemones.map((pokemon) => <Pokemon {...pokemon} />)}
+    <section className={pokemonContainer}>
+      {pokemones.map((pokemon) => <Pokemon key={pokemon.id}{...pokemon} />)}
     </section>
   );
 }
+
+
 
 export default PokemonApi;
